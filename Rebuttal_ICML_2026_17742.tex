@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+ \usepackage{subcaption}
+\title{ICML Rebuttal}
+\author{Submission Number: 17742}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Dkl/DKL_-5_5.pdf}
+        \caption{Spectral recommendations derived from KL divergence and Wasserstein-2 optimization, compared to the DPS heuristic, for different numbers of diffusion steps.}
+        \label{fig:kl_rec}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Dkl/Dkl_loss.pdf}
+        \caption{Wasserstein-2 distance as a function of the number of diffusion steps, for the KL-derived recommendations, the Wasserstein-2 recommendations, and the DPS heuristic.}
+        \label{fig:kl_w2}
+    \end{subfigure}
+    \caption{Comparison of spectral recommendations derived from KL divergence and Wasserstein-2 optimization. (a) Recommended weights alongside the DPS heuristic. (b) Resulting Wasserstein-2 distances across diffusion steps.}
+    \label{fig:kl_comparison}
+\end{figure}
+
+
+
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+% ...
+
+\begin{figure}[t]
+    \centering
+
+    % Row 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/random/FID.pdf}
+        \caption{FID $\downarrow$}
+        \label{fig:inpainting_fid}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/random/LPIPS.pdf}
+        \caption{LPIPS $\downarrow$}
+        \label{fig:inpainting_lpips}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Row 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/random/SSIM.pdf}
+        \caption{SSIM $\uparrow$}
+        \label{fig:inpainting_ssim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/random/PSNR.pdf}
+        \caption{PSNR $\uparrow$}
+        \label{fig:inpainting_psnr}
+    \end{subfigure}
+
+    \caption{
+        Comparison of DPS (heuristic step size), DPS (spectral recommendation),
+        and DAPS on random inpainting with $p = 0.7$ and additive Gaussian noise $\sigma_y = 0.1$,
+        evaluated across diffusion steps (NFE) on the FFHQ dataset.
+        \subref{fig:inpainting_fid}~FID,
+        \subref{fig:inpainting_lpips}~LPIPS,
+        \subref{fig:inpainting_ssim}~SSIM,
+        \subref{fig:inpainting_psnr}~PSNR.
+    }
+    \label{fig:inpainting_comparison}
+\end{figure}
+
+
+\begin{figure}[t]
+    \centering
+
+    % Row 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/Squared/FID.pdf}
+        \caption{FID $\downarrow$}
+        \label{fig:inpainting_fid}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/Squared/LPIPS.pdf}
+        \caption{LPIPS $\downarrow$}
+        \label{fig:inpainting_lpips}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Row 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/Squared/SSIM.pdf}
+        \caption{SSIM $\uparrow$}
+        \label{fig:inpainting_ssim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Inpainting/Squared/PSNR.pdf}
+        \caption{PSNR $\uparrow$}
+        \label{fig:inpainting_psnr}
+    \end{subfigure}
+
+    \caption{
+     Comparison of DPS (heuristic step size), DPS (spectral recommendation),
+    and DAPS on box inpainting with a $128 \times 128$ mask
+    and additive Gaussian noise $\sigma_y = 0.1$,
+    evaluated across diffusion steps (NFE) on the FFHQ dataset.
+    \subref{fig:inpainting_fid}~FID,
+    \subref{fig:inpainting_lpips}~LPIPS,
+    \subref{fig:inpainting_ssim}~SSIM,
+    \subref{fig:inpainting_psnr}~PSNR.
+    }
+    \label{fig:inpainting_comparison}
+\end{figure}
+
+
+
+\begin{figure}[t]
+    \centering
+
+    % Row 1
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{blurring/FID.pdf}
+        \caption{FID $\downarrow$}
+        \label{fig:inpainting_fid}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{blurring/LPIPS.pdf}
+        \caption{LPIPS $\downarrow$}
+        \label{fig:inpainting_lpips}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Row 2
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{blurring/SSIM.pdf}
+        \caption{SSIM $\uparrow$}
+        \label{fig:inpainting_ssim}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{blurring/PSNR.pdf}
+        \caption{PSNR $\uparrow$}
+        \label{fig:inpainting_psnr}
+    \end{subfigure}
+
+    \caption{
+  Comparison of DPS (heuristic step size), DPS (spectral recommendation),
+    and DiffPIR on LPF with kernel size $\mathcal{V} = 0.1$
+    and additive Gaussian noise $\sigma_y = 0.1$,
+    evaluated across diffusion steps (NFE) on the FFHQ dataset.
+    \subref{fig:inpainting_fid}~FID,
+    \subref{fig:inpainting_lpips}~LPIPS,
+    \subref{fig:inpainting_ssim}~SSIM,
+    \subref{fig:inpainting_psnr}~PSNR.
+    }
+    \label{fig:inpainting_comparison}
+\end{figure}
+
+
+
+\end{document}
